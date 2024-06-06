@@ -4,7 +4,7 @@ import logo from '../assets/logo.jpg'
 const Nav = () => {
   return (
     <nav>
-      <img src={logo} alt="" width={200} />
+      <div><img src={logo} alt="" width={200} /></div>
       <ul>
         <li>
           <a href="">Home</a>
