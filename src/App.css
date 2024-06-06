@@ -20,8 +20,33 @@ nav ul li:nth-of-type(4) a{
 }
 
 
+/*form*/
+.reservation{
+  text-align: center;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2rem 4rem;
+}
+label {
+  margin-right: 1rem ;
+}
 
-
+form button{
+  color: black;
+  font-weight: bold;
+  background-color: yellow;
+  border-radius: 2rem;
+  border: none;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+}
+form button:hover{
+  opacity: .8;
+}
 
 
 /*footer */

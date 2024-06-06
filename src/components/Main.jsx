@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import PopupModal from './PopupModal';
 
 const Main = () => {
   const[name, setName] = useState("");
@@ -34,9 +35,19 @@ const Main = () => {
       occasion
       );
     };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
-      <h2>Reservation</h2>
+      <h2 className='reservation'>Reservation</h2>
       <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="date">Reservation Date:</label>
@@ -93,8 +104,9 @@ const Main = () => {
         <label htmlFor="comments">Comments:</label>
         <textarea type="textarea" id="comments" name="comments" placeholder="Comments" value={comments} onChange={(e) => { setComments(e.target.value); }}></textarea>
       </div>
-        <button type="submit" disabled={!getIsFormValid()}>Book</button>
+        <button type="submit" disabled={!getIsFormValid()} onClick={openModal}>Book</button>
       </form>
+      {isModalOpen && <PopupModal isOpen={isModalOpen} onClose={closeModal} />}
     </>
   );
 };
